@@ -28,7 +28,7 @@
             <div class="col-12 text-center mt-3">
                 <div class="footer-text">
                     <?php
-                    $footer_text = get_theme_mod( 'fectionmini_footer_text', '&copy; ' . date('Y') . ' ' . get_bloginfo( 'name' ) );
+                    $footer_text = get_theme_mod( 'fectionmini_footer_text', '&copy; ' . current_time('Y') . ' ' . get_bloginfo( 'name' ) );
                     echo wp_kses_post( $footer_text );
                     ?>
                 </div>

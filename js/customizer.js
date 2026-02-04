@@ -57,7 +57,11 @@
     // Footer Text
     wp.customize('fectionmini_footer_text', function(value) {
         value.bind(function(newval) {
-            $('.footer-text').html(newval);
+            // Since the content is sanitized with wp_kses_post on the server,
+            // we can safely use html() here. For plain text, use .text() instead.
+            var tempDiv = document.createElement('div');
+            tempDiv.innerHTML = newval;
+            $('.footer-text').html(tempDiv.innerHTML);
         });
     });
 

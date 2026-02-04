@@ -223,7 +223,7 @@ function fectionmini_customize_register( $wp_customize ) {
     
     // Footer Text
     $wp_customize->add_setting( 'fectionmini_footer_text', array(
-        'default'           => '&copy; ' . date('Y') . ' ' . get_bloginfo( 'name' ),
+        'default'           => '&copy; ' . current_time('Y') . ' ' . get_bloginfo( 'name' ),
         'sanitize_callback' => 'wp_kses_post',
         'transport'         => 'postMessage',
     ) );
